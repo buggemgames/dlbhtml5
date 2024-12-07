@@ -35571,9 +35571,7 @@ mx_utils_NameUtil.createUniqueName = function(object) {
 	if(object == null) {
 		return null;
 	}
-	console.log(object);
-	var name = object.__name__;
-	console.log(name);
+	var name = object.__name__ || object.__name;
 	var index = Std.parseInt(Std.string(name.indexOf("::")));
 	if(index != -1) {
 		name = name.substr(index + 2);

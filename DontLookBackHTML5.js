@@ -896,7 +896,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "18";
+	app.meta.h["build"] = "19";
 	app.meta.h["company"] = "Terry Cavanagh";
 	app.meta.h["file"] = "DontLookBackHTML5";
 	app.meta.h["name"] = "DontLookBackHTML5";
@@ -33259,7 +33259,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 813589;
+	this.version = 94164;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
@@ -35544,9 +35544,6 @@ mx_utils_NameUtil.displayObjectToString = function(displayObject) {
 	try {
 		o = displayObject;
 		while(o != null) {
-			if(o.get_name() == null) {
-				break;
-			}
 			if(o.parent != null && o.stage != null && o.parent == o.stage) {
 				break;
 			}
@@ -35571,7 +35568,7 @@ mx_utils_NameUtil.createUniqueName = function(object) {
 	if(object == null) {
 		return null;
 	}
-	var name = object.__name__ || object.__name;
+	var name = object.__name__;
 	var index = Std.parseInt(Std.string(name.indexOf("::")));
 	if(index != -1) {
 		name = name.substr(index + 2);

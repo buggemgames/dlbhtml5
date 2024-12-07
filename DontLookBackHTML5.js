@@ -33259,7 +33259,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 487793;
+	this.version = 813589;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
@@ -35544,6 +35544,9 @@ mx_utils_NameUtil.displayObjectToString = function(displayObject) {
 	try {
 		o = displayObject;
 		while(o != null) {
+			if(o.get_name() == null) {
+				break;
+			}
 			if(o.parent != null && o.stage != null && o.parent == o.stage) {
 				break;
 			}
@@ -35558,6 +35561,9 @@ mx_utils_NameUtil.displayObjectToString = function(displayObject) {
 			o = o.parent;
 		}
 	} catch( _g ) {
+		if(!((haxe_Exception.caught(_g)) instanceof openfl_errors_SecurityError)) {
+			throw _g;
+		}
 	}
 	return result;
 };

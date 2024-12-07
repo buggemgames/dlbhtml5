@@ -896,7 +896,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "16";
+	app.meta.h["build"] = "18";
 	app.meta.h["company"] = "Terry Cavanagh";
 	app.meta.h["file"] = "DontLookBackHTML5";
 	app.meta.h["name"] = "DontLookBackHTML5";
@@ -33259,7 +33259,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 140735;
+	this.version = 487793;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
@@ -35558,9 +35558,6 @@ mx_utils_NameUtil.displayObjectToString = function(displayObject) {
 			o = o.parent;
 		}
 	} catch( _g ) {
-		if(!((haxe_Exception.caught(_g)) instanceof openfl_errors_SecurityError)) {
-			throw _g;
-		}
 	}
 	return result;
 };
